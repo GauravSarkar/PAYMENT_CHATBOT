@@ -1,7 +1,8 @@
 import numpy as np
 import random
 import json
-
+import nltk
+nltk.download('punkt')
 import torch
 import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
@@ -9,7 +10,7 @@ from torch.utils.data import Dataset, DataLoader
 from nltk_utils import bag_of_words, tokenize, stem
 from model import NeuralNet
 
-with open('intents.json', 'r') as f:
+with open('/content/PAYMENT_CHATBOT/intents.json', 'r') as f:
     intents = json.load(f)
 
 all_words = []
@@ -61,7 +62,8 @@ input_size = len(X_train[0])
 hidden_size = 8
 output_size = len(tags)
 print(input_size, output_size)
-
+import nltk
+nltk.download('punkt')
 class ChatDataset(Dataset):
 
     def __init__(self):
