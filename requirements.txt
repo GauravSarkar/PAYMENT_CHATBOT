@@ -1,0 +1,5 @@
+nltk
+numpy
+random 
+json
+torch
